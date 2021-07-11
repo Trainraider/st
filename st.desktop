@@ -4,4 +4,4 @@ Name=st
 Comment=simple-terminal emulator for X
 Icon=utilities-terminal
 Exec=st
-Categories=System;TerminalEmulator
+Categories=Utility;GTK;System;TerminalEmulator;
