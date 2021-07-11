@@ -47,11 +47,11 @@ command : use Xresourcesfile && load
 ```
 
 #void (most of these are already installed on arch distros)
-xbps-install libXft-devel libX11-devel harfbuzz-devel libXext-devel libXrender-devel libXinerama-devel
+xbps-install libXft-devel libX11-devel harfbuzz-devel libXext-devel libXrender-devel libXinerama-devel ttf-jetbrains-mono
  
 
 #Debian (and ubuntu probably)
-apt install build-essential libxft-dev libharfbuzz-dev 
+apt install build-essential libxft-dev libharfbuzz-dev fonts-jetbrains-mono
 
 ```
 
@@ -100,7 +100,7 @@ you can change all of these in config.h
 
 ls-icons: https://github.com/Yash-Handa/logo-ls <br>
 Xresources: onedark ( just xrdb merge xresourcesfile , do this everytime you make any change to xresources file ) from this repo itself.<br>
-Font: <a href="https://github.com/siduck76/matfonts"> JetbrainsMono Nerd Font + material design icon fonts </a>
+Font: <a href="https://www.jetbrains.com/lp/mono/"> Jetbrains Mono</a>
 
 a lil<a href="https://share.vidyard.com/watch/sdFeoxaRr124U893WVEcxN?"> video </a>demo to show zoom/alpha changing via keybinds
 
