@@ -64,6 +64,7 @@ install: st
 	@echo Please see the README file regarding the terminfo entry of st.
 	mkdir -p $(DESTDIR)$(PREFIX)/share/applications
 	cp -f st.desktop $(DESTDIR)$(PREFIX)/share/applications
+	update-desktop-database $(DESTDIR)$(PREFIX)/share/applications
 
 uninstall:
 	$(ROOTCHECK)
@@ -72,5 +73,6 @@ uninstall:
 	rm -f $(DESTDIR)$(PREFIX)/bin/st-urlhandler
 	rm -f $(DESTDIR)$(MANPREFIX)/man1/st.1
 	rm -f $(DESTDIR)$(PREFIX)/share/applications/st.desktop
+	update-desktop-database $(DESTDIR)$(PREFIX)/share/applications
 
 .PHONY: all options clean dist install uninstall
