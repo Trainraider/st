@@ -4,6 +4,12 @@
 
 include config.mk
 
+ROOTCHECK = @echo;\
+	if [[ $EUID -ne 0 ]]; then\
+		echo "error: you cannot perform this operation unless you are root.";\
+		exit 1;\
+	fi
+
 SRC = st.c x.c boxdraw.c hb.c
 OBJ = $(SRC:.c=.o)
 
@@ -43,6 +49,7 @@ dist: clean
 	rm -rf st-$(VERSION)
 
 install: st
+	$(ROOTCHECK)
 	mkdir -p $(DESTDIR)$(PREFIX)/bin
 	cp -f st $(DESTDIR)$(PREFIX)/bin
 	cp -f st-copyout $(DESTDIR)$(PREFIX)/bin
@@ -59,6 +66,7 @@ install: st
 	cp -f st.desktop $(DESTDIR)$(PREFIX)/share/applications
 
 uninstall:
+	$(ROOTCHECK)
 	rm -f $(DESTDIR)$(PREFIX)/bin/st
 	rm -f $(DESTDIR)$(PREFIX)/bin/st-copyout
 	rm -f $(DESTDIR)$(PREFIX)/bin/st-urlhandler
