@@ -3,3 +3,4 @@ st
 pkg/
 *.pkg.tar.xz
 patches
+config.h
